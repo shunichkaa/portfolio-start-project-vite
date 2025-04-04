@@ -39,7 +39,7 @@ const IconWrapper = styled.div`
         
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 12%;
         transform-origin: top left;
     }
 `
