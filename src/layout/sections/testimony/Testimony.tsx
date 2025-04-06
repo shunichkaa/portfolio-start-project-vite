@@ -22,4 +22,9 @@ export const Testimony = () => {
 export const StyledTestimony = styled.section`
     min-height: 100vh;
     
+    
+    ${IconWrapper} {
+        margin: 52px 0 72px;
+    }
+    
 `
