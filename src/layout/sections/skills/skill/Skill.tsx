@@ -1,6 +1,6 @@
-import {Icon} from "../../../../components/icon/Icon.tsx";
+import { Icon } from "../../../../components/icon/Icon.tsx";
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper.tsx";
+import { FlexWrapper } from "../../../../components/FlexWrapper.tsx";
 
 type SkillPropsType = {
     iconId: string;
@@ -14,9 +14,9 @@ export const Skill = (props: SkillPropsType) => {
             <FlexWrapper direction="column" align="center">
                 <IconWrapper>
                     <Icon iconId={props.iconId}/>
-                    <SkillTitle>{props.title}</SkillTitle>
-                    <SkillText>{props.description}</SkillText>
                 </IconWrapper>
+                <SkillTitle>{props.title}</SkillTitle>
+                <SkillText>{props.description}</SkillText>
             </FlexWrapper>
         </StyledSkill>
     );
@@ -25,9 +25,15 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
     width: 380px;
     padding: 62px 20px 40px;
-`
+`;
+
 export const IconWrapper = styled.div`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;  /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
 
     &::before {
         content: '';
@@ -46,8 +52,7 @@ export const IconWrapper = styled.div`
 
 const SkillTitle = styled.h3`
     margin: 70px 0 0 15px;
-
 `
-const SkillText = styled.p`
 
+const SkillText = styled.p`
 `
