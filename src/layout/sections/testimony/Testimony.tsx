@@ -3,13 +3,16 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Slider} from "../../../components/slider/Slider";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {IconWrapper} from "../skills/skill/Skill.tsx";
 
 export const Testimony = () => {
     return (
         <StyledTestimony>
             <SectionTitle>Testimony</SectionTitle>
                 <FlexWrapper direction="column" align="center">
-                    <Icon iconId={"quotes"}/>
+                    <IconWrapper>
+                        <Icon iconId={"quotes"}/>
+                    </IconWrapper>
                     <Slider/>
                 </FlexWrapper>
         </StyledTestimony>
