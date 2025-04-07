@@ -3,6 +3,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import styled from "styled-components";
 import {Container} from "../../../components/Container.tsx";
 import {theme} from "../../../styles/Theme.tsx";
+import {font} from "../../../styles/Common.tsx";
 
 export const Main = () => {
     return (
@@ -64,15 +65,12 @@ const Photo = styled.img`
 `
 
 const MainTitle= styled.h1`
-    font-weight: 400;
-    font-size: 27px;
+    ${font({ weight: 400, Fmax: 27, Fmin: 20})}
 
 `
 
 const Name= styled.h2`
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    font-size: 50px;
+    ${font({family:  "'Josefin Sans, sans-serif", weight: 700, Fmax: 50, Fmin: 36})}
     letter-spacing: 0.05rem;
     margin: 10px 0;
     
