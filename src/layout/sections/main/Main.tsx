@@ -27,32 +27,37 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.78);
+    background-color: #fff5e7;
     display: flex;
 `
 const PhotoWrapper = styled.div`
     position: relative;
     z-index: 0;
-    margin-top: 65px;
     
     &::before {
         content: '';
         width: 360px;
         height: 470px;
         border: 5px solid ${theme.colors.accent};
+        
         position: absolute;
         top: -24px;
         left: 24px;
         z-index: -1;
         
         @media ${theme.media.mobile} {
-            width: 331px;
+            width: 314px;
             height: 414px;
             top: -17px;
             left: 20px;
 
         }
     }
+
+    @media ${theme.media.mobile} {
+        margin-top: 65px;
+    }
+
 `
 
 const Photo = styled.img`
