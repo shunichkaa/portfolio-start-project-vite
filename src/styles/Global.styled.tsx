@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background: unset;
         border: none;
-         cursor: pointer;
+        cursor: pointer;
         color: ${theme.colors.font};
 
     }
