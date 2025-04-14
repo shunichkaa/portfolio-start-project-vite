@@ -1,14 +1,17 @@
 import styled, { css } from "styled-components";
 import {theme} from "../../../styles/Theme.tsx";
+import {useState} from "react";
 
 export const MobileMenu = (props: {menuItems: Array<string> }) => {
+    const [menuIsOpen, setmenuIsOpen] = useState(false)
+    const onBurgerBtnClick = () => {setmenuIsOpen(!menuIsOpen)}
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={menuIsOpen} onClick={()=>{setmenuIsOpen(false)}}>
                 <ul>
                     {props.menuItems.map((item, index) => {
                         return <ListItem key={index}>
@@ -31,7 +34,7 @@ export const MobileMenu = (props: {menuItems: Array<string> }) => {
 
 const StyledMobileMenu = styled.nav`
     display: none;
-    
+
     @media ${theme.media.tablet} {
         display: block;
     }
@@ -59,7 +62,7 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    
+
     }
 `
 
@@ -121,7 +124,7 @@ const Link = styled.a`
     letter-spacing: 0%;
     text-align: center;
     color: transparent;
-    
+
 `
 const Mask = styled.span`
     position: absolute;
@@ -131,7 +134,7 @@ const Mask = styled.span`
     height: 50%;
     overflow-y: hidden;
     color: ${theme.colors.accent};
-    
+
     &+& {
         top:50%;
         span {
@@ -143,32 +146,32 @@ const Mask = styled.span`
 `
 const ListItem = styled.li`
     position: relative;
-    
+
     &::before {
         content: '';
         display: inline-block;
         height: 3px;
         background: ${theme.colors.accent};
-        
+
         position: absolute;
         top: 50%;
         left: -10px;
         right: -10px;
         z-index: 1;
-        
+
         transform: scale(0);
     }
-    
+
     &:hover {
         &::before {
             transform: scale(1);
         }
-        
+
         ${Mask} {
             transform: translateX(5px);
             color: ${theme.colors.font};
-            
-            
+
+
             & + ${Mask} {
                 transform: translateX(-5px);
             }
