@@ -20,4 +20,3 @@ export const Slider:React.FC = () => {
         </S.Slider>
     );
 };
-

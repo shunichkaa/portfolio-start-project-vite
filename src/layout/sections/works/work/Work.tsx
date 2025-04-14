@@ -25,5 +25,3 @@ export const Work:React.FC<WorkPropsType> = (props: WorkPropsType) => {
         </S.Work>
     );
 };
-
-

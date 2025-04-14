@@ -9,7 +9,7 @@ import {S} from "./Header_Styles.ts"
 
 const items = ["Home", "Skills", "Works", "Testimony", "Contact"];
 
-export const Header: React.FC = () => {
+export const Header:React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 768;
 

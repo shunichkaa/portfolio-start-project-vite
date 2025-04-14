@@ -41,4 +41,3 @@ export const Works: React.FC = () => {
         </S.Works>
     );
 };
-

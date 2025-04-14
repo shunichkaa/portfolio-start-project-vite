@@ -4,7 +4,7 @@ import {Container} from "../../../components/Container.tsx";
 import React from "react";
 import { S } from './Main_Styles.ts';
 
-export const Main: React.FC = () => {
+export const Main:React.FC = () => {
     return (
         <S.Main>
             <Container>
