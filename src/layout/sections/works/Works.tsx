@@ -6,40 +6,23 @@ import {Work} from "./work/Work.tsx";
 import socialImg from "../../../assets/images/proj1.png";
 import timerImg from "../../../assets/images/proj2.png";
 import {Container} from "../../../components/Container.tsx";
-import * as React from "react";
 
-// export const tabsItems = ["All", "Landing page", "React", "spa"];
-
+export const worksItems = ["All", "Landing page", "React", "spa"];
 
 
-const workData = [
-    {
-        title: "Social Network",
-        src: socialImg,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        type: "spa",
-    },
-    {
-        title: "Timer",
-        src: timerImg,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        type: "react",
-    },
-]
-
-
-export const Works: React.FC = () => {
+export const Works = () => {
     return (
         <StyledWorks>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
-                <TabMenu tabsItems={tabsItems}/>
+                <TabMenu menuItems={worksItems}/>
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={"wrap"}>
-                    {workData.map((w) => {
-                        return <Work title={w.title}
-                                     src={w.src}
-                                     text={w.text}/>
-                    })}
+                    <Work title={"Social Network"}
+                          src={socialImg}
+                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."}/>
+                    <Work title={"Timer"}
+                          src={timerImg}
+                          text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."}/>
                 </FlexWrapper>
             </Container>
         </StyledWorks>
