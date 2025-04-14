@@ -6,8 +6,8 @@ import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu.tsx";
 import React from "react";
 import {S} from "./Header_Styles.ts"
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const items = ["Home", "Skills", "Works", "Testimony", "Contact"];
+
+const items = ["Home", "Skills", "Works", "Testimony", "Contact"];
 
 export const Header: React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
