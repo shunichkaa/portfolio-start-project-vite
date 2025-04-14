@@ -1,79 +1,41 @@
-import styled from 'styled-components';
 import {Icon} from "../../components/icon/Icon.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
-import {theme} from "../../styles/Theme.tsx";
-import {font} from "../../styles/Common.tsx";
+import { S } from "./Footer_Styles.ts";
+import React from "react";
+
+const socialItemsData = [
+    {
+        iconId: "inst",
+    },
+    {
+        iconId: "telegram",
+    },
+    {
+        iconId: "linkIn",
+    }
+]
 
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <FlexWrapper direction="column" align="center">
-                <Name>Aleksandra</Name>
-                    <SocialList>
-                        <SocialItem>
-                            <SocialLink>
-                                <Icon height={"21px"} width={"21px"} viewBox={"0 0 21px 21px"} iconId={"inst"}/>
-                            </SocialLink>
-                        </SocialItem>
-                        <SocialItem>
-                            <SocialLink>
-                                <Icon height={"21px"} width={"21px"} viewBox={"0 0 21px 21px"}  iconId={"telegram"}/>
-                            </SocialLink>
-                        </SocialItem>
-                        <SocialItem>
-                            <SocialLink>
-                                <Icon height={"21px"} width={"21px"} viewBox={"0 0 21px 21px"} iconId={"linkIn"}/>
-                            </SocialLink>
-                        </SocialItem>
-                </SocialList>
-                <CopyRight>© 2025 Aleksandra Mate, All Rights Reserved.</CopyRight>
+                <S.Name>Aleksandra</S.Name>
+                    <S.SocialList>
+                        {socialItemsData.map((s, index) => {
+                           return(
+                            <S.SocialItem key={index}>
+                                    <S.SocialLink>
+                                        <Icon height={"21px"}
+                                              width={"21px"}
+                                              viewBox={"0 0 21px 21px"}
+                                              iconId={s.iconId}/>
+                                    </S.SocialLink>
+                            </S.SocialItem>)
+                        })}
+                </S.SocialList>
+                <S.CopyRight>© 2025 Aleksandra Mate, All Rights Reserved.</S.CopyRight>
             </FlexWrapper>
-        </StyledFooter>
+        </S.Footer>
     );
 };
-
-const StyledFooter = styled.footer`
-    background-color: ${theme.colors.primaryBg};
-    padding: 40px 0;
-`
-const Name = styled.span`
-    ${font({family: '"Josefin Sans", sans-serif', weight: 700, Fmax: 22, Fmin: 16})} 
-    letter-spacing: 3px;
-    
-
-`
-const SocialList = styled.ul`
-    display: flex;
-    gap: 20px;
-    margin: 30px 0;
-    
-`
-const SocialLink = styled.a`
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    color: ${theme.colors.accent};
-    
-    &:hover{
-        color: ${theme.colors.primaryBg};
-        transform: translateY(-4px);
-    }
-`
-const CopyRight = styled.small`
-
-    font-weight: 400;
-    font-size: 12px;
-    text-align: center;
-    opacity: 0.5;
-
-`
-const SocialItem = styled.li`
-
-`
