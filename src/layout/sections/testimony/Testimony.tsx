@@ -5,6 +5,7 @@ import {Slider} from "../../../components/slider/Slider";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {S} from "../skills/Skills_Styles.ts"
+import React from "react";
 
 export const Testimony:React.FC = () => {
     return (

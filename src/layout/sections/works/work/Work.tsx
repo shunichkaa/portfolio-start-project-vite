@@ -14,11 +14,11 @@ export const Work:React.FC<WorkPropsType> = (props: WorkPropsType) => {
         <S.Work>
             <S.Description>
                 <S.ImageWrapper>
-                    <Image src={props.src} alt=""/>
+                    <S.Image src={props.src} alt=""/>
                     <Button>view project</Button>
                 </S.ImageWrapper>
                 <S.Title>{props.title}</S.Title>
-                <Text>{props.text}</Text>
+                <S.Text>{props.text}</S.Text>
                 <Link href={"#"}>demo</Link>
                 <Link href={"#"}>code</Link>
             </S.Description>
