@@ -1,10 +1,10 @@
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.ts";
 import {TabMenu} from "./tabMenu/TabMenu.tsx";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Work} from "./work/Work.tsx";
 import socialImg from "../../../assets/images/proj1.png";
 import timerImg from "../../../assets/images/proj2.png";
-import {Container} from "../../../components/Container.tsx";
+import {Container} from "../../../components/Container.ts";
 import React from "react";
 import { S } from "./Works_Styles.ts";
 
