@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {theme} from "../../styles/Theme.tsx";
 
 const Slider = styled.div`
+    width: 100%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
