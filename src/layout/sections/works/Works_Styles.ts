@@ -28,11 +28,6 @@ const Work = styled.div`
     } 
 `
 
-const Image = styled.img`
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-`
 const Title = styled.h3`
     margin: 14px 0 10px;
 `
@@ -50,11 +45,10 @@ const ImageWrapper = styled.div`
     ${Button} {
         opacity: 0;
         position: absolute;
-        z-index: 2;
-        color: ${theme.colors.font};
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
+        transition: ${theme.animations.transition};
 
         &::before {
             width: 100%;
@@ -70,30 +64,37 @@ const ImageWrapper = styled.div`
         bottom: 0;
         top: 0;
         background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(2px);
         opacity: 0;
-        z-index: 1;
+        transition: ${theme.animations.transition};
     }
 
     &:hover {
-        ${Button} {
-            opacity: 1;
-        }
-
         &::before {
             opacity: 1;
+        }
+        
+        ${Button} {
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
     }
 
     @media ${theme.media.tablet} {
-        ${Button} {
-            opacity: 1;
-        }
-
         &::before {
             opacity: 1;
         }
+        
+        ${Button} {
+            opacity: 1;
+        }
     }
+`
+
+const Image = styled.img`
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 `
 
 export const S = {
