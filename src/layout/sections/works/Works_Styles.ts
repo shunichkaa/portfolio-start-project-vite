@@ -3,40 +3,43 @@ import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {theme} from "../../../styles/Theme.tsx";
 import {Link} from "../../../components/Link.ts";
 import {Button} from "../../../components/Button.ts";
+import {motion} from "framer-motion";
 
 const Works = styled.section`
     ${FlexWrapper} {
         gap: 30px;
     }
+
     position: relative;
 `
-const Work = styled.div`
+
+const Work = styled(motion.div)`
     background-color: ${theme.colors.secondaryBg};
-    width: 330px;
-    flex-grow: 1;
-    
-    ${Link}{
-    padding: 10px 0;
-        
-    & + ${Link} {
-        margin-left: 20px;
+    //width: 330px;
+    //flex-grow: 1;
+
+    ${Link} {
+        padding: 10px 0;
+
+        & + ${Link} {
+            margin-left: 20px;
         }
     }
-    
-    @media ${theme.media.desktop} {
-        max-width: 540px;
-    } 
+
+        // @media ${theme.media.desktop} {
+    //     max-width: 540px;
+    // } 
 `
 
 const Title = styled.h3`
     margin: 14px 0 10px;
 `
 const Text = styled.p`
-    
+
 `
 const Description = styled.div`
-padding: 25px 20px;
-    
+    padding: 25px 20px;
+
 `
 
 const ImageWrapper = styled.div`
@@ -73,7 +76,7 @@ const ImageWrapper = styled.div`
         &::before {
             opacity: 1;
         }
-        
+
         ${Button} {
             opacity: 1;
             transform: translate(-50%, -50%);
@@ -84,7 +87,7 @@ const ImageWrapper = styled.div`
         &::before {
             opacity: 1;
         }
-        
+
         ${Button} {
             opacity: 1;
         }
